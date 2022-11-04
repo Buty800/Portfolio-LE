@@ -11,7 +11,7 @@ from matplotlib.figure import Figure
 t = np.arange(0, 10, .01)
 
 def tan(x):
-    if x: return(np.maximum(0,t-1-np.log10(np.abs(x))) - np.maximum(0,t+1-np.log10(np.abs(x))))
+    if x: return(np.maximum(0,t+1-np.log10(np.abs(x))) - np.maximum(0,t-1-np.log10(np.abs(x))))
     else: return(0*t+2)
 
 def log(x):
