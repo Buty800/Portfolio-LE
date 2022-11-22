@@ -51,7 +51,7 @@ def Phase(zeros, poles):
 def show():
     ax.clear()
 
-    Lin = 1 if lin.get() == "" else float(lin.get())
+    Lin = 1 if lin.get() == "" or lin.get() == "Lineal" else float(lin.get())
     Ceros = [] if zeros.get() == "" else list(map(float, zeros.get().split(','))) 
     Polos = [] if poles.get() == "" else list(map(float, poles.get().split(',')))
 
