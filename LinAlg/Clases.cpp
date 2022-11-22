@@ -129,3 +129,18 @@ ostream& operator<<(ostream& cout, matrix matriz){
 }
 
 
+int main(){
+    float cofs[4] = {2,1,4,-3} ;
+    float res[2] = {12, 4};
+
+    matrix Cofs(2,2);
+    Cofs = cofs;
+
+    matrix Res(2,1);
+    Res = res;
+
+    cout << Cofs << endl << Res << endl;
+    cout << !Cofs * Res;
+
+    return 0;
+}
