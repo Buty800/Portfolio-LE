@@ -35,12 +35,11 @@ def Bode(zeros, poles, lin):
     poles = [-20*log(pole) for pole in poles]
     
     res = poles+zeros
-    res.append(0*t+20*np.log10(lin))
+    res.append(0*t+20*np.log10(np.abs(lin)))
     return(res)
 
 def Phase(zeros, poles):
-    s=0
-   
+
     zeros = [45*tan(zero) for zero in zeros]
     poles = [-45*tan(pole) for pole in poles]
    
@@ -52,8 +51,8 @@ def show():
     ax.clear()
 
     Lin = 1 if lin.get() == "" or lin.get() == "Lineal" else float(lin.get())
-    Ceros = [] if zeros.get() == "" else list(map(float, zeros.get().split(','))) 
-    Polos = [] if poles.get() == "" else list(map(float, poles.get().split(',')))
+    Ceros = [] if zeros.get() == "" or zeros.get() == "Ceros" else list(map(float, zeros.get().split(','))) 
+    Polos = [] if poles.get() == "" or poles.get() == "Polos" else list(map(float, poles.get().split(',')))
 
     if select.get() and (not comps.get()):
         s = sum(Phase(Ceros, Polos))  
